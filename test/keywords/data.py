@@ -35,7 +35,7 @@ def load_multiple_test_data(repositories, region, account, user) :
         repository['repositoryArn'] = repositories['arns'][i - 1]
         repository['repositoryName'] = 'test-test-' + region + '-test-' + str(i)
         repository['repositoryUri'] = account + '.dkr.ecr.'+ region + '.amazonaws.com/test-test-' + region + '-test-' + str(i)
-        repository['imageTagMutability'] = 'MUTABLE'
+        repository['imageTagMutability'] = 'IMMUTABLE'
         repository['imageScanningConfiguration'] = {"scanOnPush": True}
         repository['encryptionConfiguration'] = {"encryptionType": "KMS", "kmsKey": repositories['keys'][i - 1]}
 
